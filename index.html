@@ -1,0 +1,10 @@
+<script>
+	const urlParams = new URLSearchParams(window.location.search);
+	const agent_id = urlParams.get('agent_id');
+	const apiUrl = 'https://api.dianzibang-page.cn/api/github_url?agent_id=' + agent_id;
+	fetch(apiUrl)
+			.then(res => res.text())
+			.then(url => {
+				window.location.href = url;
+			});
+</script>
